@@ -1,9 +1,12 @@
 "use client"
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 
 export default function Contact() {
+    const t = useTranslations("Contact")
+
     return (
-        <section className='py-24 px-6 text-center'>
+        <section id='contact' data-label={t("label")} className='py-24 px-6 text-center'>
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

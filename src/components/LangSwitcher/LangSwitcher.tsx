@@ -32,8 +32,20 @@ export default function LangSwitcher() {
             aria-label='Switch language'
             className='w-[54px] h-[26px] rounded-full relative flex items-center justify-between px-[6px] border border-[var(--color-border)] bg-transparent transition-all duration-300 hover:border-[var(--color-accent)]'
         >
-            <Image src='/icons/ua.svg' alt='UA' width={14} height={14} />
-            <Image src='/icons/en.svg' alt='EN' width={14} height={14} />
+            <Image
+                src='/icons/ua.svg'
+                alt='UA'
+                width={14}
+                height={14}
+                className='w-[14px] h-[14px] max-w-none'
+            />
+            <Image
+                src='/icons/en.svg'
+                alt='EN'
+                width={14}
+                height={14}
+                className='w-[14px] h-[14px] max-w-none'
+            />
             <span
                 className={`button transition-transform duration-300 ease-out ${
                     checked ? "translate-x-0" : "translate-x-[20px]"

@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 const projects = [
@@ -28,8 +29,10 @@ const projects = [
 ]
 
 export default function ProjectsSection() {
+    const t = useTranslations("Projects")
+
     return (
-        <section id='projects' className='relative z-10 py-20 md:py-28 bg-[var(--color-bg)]'>
+        <section id='projects' data-label={t("label")} className='relative z-10 py-20 md:py-28'>
             <div className='container mx-auto px-6'>
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}

@@ -19,7 +19,11 @@ export default function Hero() {
     const t = useTranslations("Hero")
 
     return (
-        <section className='relative flex flex-col items-center justify-center min-h-screen text-center overflow-hidden'>
+        <section
+            id='hero'
+            data-label={t("label")}
+            className='relative flex flex-col items-center justify-center min-h-screen text-center overflow-hidden'
+        >
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}

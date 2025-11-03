@@ -1,7 +1,7 @@
 import "../styles/globals.css"
 import { Sora } from "next/font/google"
 import ThemeProvider from "@/providers/ThemeProvider"
-import NoiseBackground from "@/components/NoiseBackground"
+import NoiseBackground from "@/components/NoiseBackground/NoiseBackground"
 
 const sora = Sora({
     subsets: ["latin"],
@@ -20,11 +20,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <head></head>
             <body
                 suppressHydrationWarning
-                className='overflow-hidden bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-500'
+                className='overflow-hidden transition-colors duration-500'
             >
                 <ThemeProvider>
-                    {children}
                     <NoiseBackground />
+                    {children}
                 </ThemeProvider>
             </body>
         </html>

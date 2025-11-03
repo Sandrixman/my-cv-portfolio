@@ -3,12 +3,16 @@
 import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
-import Header from "@/components/Header"
+import { useLenis } from "@/hooks/useLenis"
+import Header from "@/components/Header/Header"
+import VerticalNav from "./VerticalNav"
 
 export default function LayoutWrapper({ children }: { children: React.ReactNode }) {
     const { resolvedTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
     const [animateOut, setAnimateOut] = useState(false)
+
+    useLenis(true)
 
     useEffect(() => {
         // Unlock scroll after hydration
@@ -25,7 +29,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
     return (
         <div
             {...themeProps}
-            className='relative min-h-screen overflow-hidden bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-500'
+            className='relative min-h-screen overflow-hidden transition-colors duration-500'
         >
             {/* --- MAIN CONTENT --- */}
             <motion.div
@@ -35,11 +39,11 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
                 className={mounted ? "pointer-events-auto" : "pointer-events-none"}
             >
                 <Header />
-                <main className='pt-[56px]'>{children}</main>
+                <VerticalNav />
+                <main className='pt-[56px] w-full'>{children}</main>
             </motion.div>
 
             {/* --- BRAND PRELOADER --- */}
-
             <motion.div
                 className='fixed inset-0 flex items-center justify-center z-[9999]'
                 style={{
