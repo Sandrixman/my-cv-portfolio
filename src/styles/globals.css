@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-bg: #ffffff;
+        --color-bg-muted: #f8f9fb;
+        --color-card: #f3f4f6;
+        --color-border: #e5e7eb;
+        --color-text: #0f0f13;
+        --color-text-muted: #4b5563;
+
+        --color-accent: #8b5cf6;
+        --color-accent-hover: #7c3aed;
+        --color-gradient-start: #8b5cf6;
+        --color-gradient-end: #ec4899;
+
+        --color-success: #10b981;
+        --color-error: #ef4444;
+        --color-warning: #f59e0b;
+    }
+
+    .dark {
+        --color-bg: #0f0f13;
+        --color-bg-muted: #17171c;
+        --color-card: #1e1e25;
+        --color-border: #2a2a33;
+        --color-text: #ffffff;
+        --color-text-muted: #9ca3af;
+
+        --color-accent: #ec4899;
+        --color-accent-hover: #f472b6;
+        --color-gradient-start: #ec4899;
+        --color-gradient-end: #8b5cf6;
+
+        --color-success: #34d399;
+        --color-error: #f87171;
+        --color-warning: #fbbf24;
+    }
+
+    html {
+        font-size: clamp(8px, (100vw / 1440) * 16, 16px);
+    }
+
+    html,
+    body {
+        @apply font-sora antialiased transition-colors duration-500;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+    }
+
+    section {
+        @apply min-h-screen flex flex-col items-center justify-center px-6;
+    }
+
+    a {
+        @apply underline-offset-2 transition;
+        color: var(--color-accent);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply font-bold leading-tight;
+    }
+
+    p {
+        color: var(--color-text-muted);
+        @apply leading-relaxed;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+            180deg,
+            var(--color-gradient-start) 0%,
+            var(--color-gradient-end) 100%
+        );
+        border-radius: 4px;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@import "./components.css";
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.logo-gradient {
+    background: linear-gradient(270deg, #ff007a, #a800ff, #00e0ff, #ff007a);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradient-move 4s linear infinite;
+}
