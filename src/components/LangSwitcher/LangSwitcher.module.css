@@ -1,4 +1,4 @@
-body {
+.button {
     --hue: 220deg;
     --width: 23rem;
     --accent-hue: 22deg;
@@ -6,7 +6,7 @@ body {
     --easing: cubic-bezier(1, 0, 1, 1);
 }
 
-.button {
+.switcher {
     position: absolute;
     z-index: 1;
     width: 50%;
@@ -23,8 +23,8 @@ body {
         10px 20px 10px hsl(var(--hue) 18% 50% / 40%), 20px 30px 30px hsl(var(--hue) 18% 50% / 60%);
 }
 
-.button::before,
-.button::after {
+.switcher::before,
+.switcher::after {
     content: "";
     position: absolute;
     top: 10%;
@@ -33,7 +33,7 @@ body {
     border-radius: 100%;
 }
 
-.button::before {
+.switcher::before {
     left: 5%;
     box-shadow: inset 1px 1px 2px hsl(var(--hue) 20% 85%);
     background-image: linear-gradient(
@@ -43,7 +43,7 @@ body {
     );
 }
 
-.button::after {
+.switcher::after {
     right: 5%;
     box-shadow: inset 1px 1px 3px hsl(var(--hue) 20% 70%);
     background-image: linear-gradient(

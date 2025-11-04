@@ -1,21 +1,9 @@
 "use client"
+import styles from "./NoiseBackground.module.css"
 
 export default function NoiseBackground() {
     return (
-        <svg
-            id='noise-svg'
-            xmlns='http://www.w3.org/2000/svg'
-            style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                opacity: 0.05,
-                pointerEvents: "none",
-                zIndex: 10000,
-            }}
-        >
+        <svg className={styles.noiseSvg} xmlns='http://www.w3.org/2000/svg'>
             <filter id='noiseFilter'>
                 <feTurbulence
                     type='fractalNoise'

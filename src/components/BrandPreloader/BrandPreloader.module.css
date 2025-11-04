@@ -1,0 +1,34 @@
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.preloaderOverlay {
+    background: var(--color-bg);
+    font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: 0.04em;
+    perspective: 900px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.logoGradient {
+    transform-origin: center center;
+    display: inline-block;
+    background: linear-gradient(270deg, #ff007a, #a800ff, #00e0ff, #ff007a);
+    background-size: 400% 400%;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradient-move 4s linear infinite;
+}

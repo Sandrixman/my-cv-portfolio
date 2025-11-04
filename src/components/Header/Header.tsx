@@ -44,7 +44,7 @@ export default function Header() {
                     ${hidden && pastHero ? "-translate-y-full" : "translate-y-0"}`}
             >
                 {/* Logo */}
-                <div className='font-semibold text-[1.1rem] gradient-text tracking-wide whitespace-nowrap'>
+                <div className='font-semibold text-[2rem] md:text-[1.2rem] gradient-text tracking-wide whitespace-nowrap'>
                     Oleksandr Novak
                 </div>
 

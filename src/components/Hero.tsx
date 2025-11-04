@@ -5,14 +5,14 @@ import { Code2 } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 const techStack = [
+    "HTML5/CSS3",
+    "JS",
     "React",
     "Next.js",
     "TypeScript",
-    "Tailwind",
-    "GSAP",
-    "Framer Motion",
-    "Lenis",
+    "GITHUB",
     "Bubble.io",
+    "Node.js",
 ]
 
 export default function Hero() {
@@ -51,7 +51,7 @@ export default function Hero() {
                     {techStack.map((tech) => (
                         <span
                             key={tech}
-                            className='px-3 py-1 text-sm rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700'
+                            className='px-3 pt-1 text-sm rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700'
                         >
                             {tech}
                         </span>

@@ -1,4 +1,4 @@
-#noise-svg {
+.noiseSvg {
     position: fixed;
     top: 0;
     left: 0;
@@ -6,8 +6,5 @@
     height: 100%;
     opacity: 0.05;
     pointer-events: none;
-}
-#noise-svg #noise-rect {
-    width: 100vw;
-    height: 100vh;
+    z-index: 1001;
 }

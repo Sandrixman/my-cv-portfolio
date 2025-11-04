@@ -1,4 +1,4 @@
-export function scrollToSection(id: string, offset = -56) {
+export function scrollToSection(id: string, offset = 0) {
     const el = document.getElementById(id)
     if (el instanceof HTMLElement) {
         if (window.lenis) {
