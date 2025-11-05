@@ -1,6 +1,6 @@
 import "./globals.css"
 import { Sora } from "next/font/google"
-import ThemeProvider from "@/providers/ThemeProvider"
+import { ThemeProvider } from "next-themes"
 import NoiseBackground from "@/components/NoiseBackground/NoiseBackground"
 
 const sora = Sora({
@@ -9,17 +9,18 @@ const sora = Sora({
     variable: "--font-sora",
 })
 
-export const metadata = {
-    title: "Oleksandr Novak — Portfolio",
-    description: "Front-End / Bubble Developer Portfolio",
-}
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+    children,
+    params,
+}: {
+    children: React.ReactNode
+    params: { locale: string }
+}) {
     return (
-        <html lang='en' className={sora.variable} suppressHydrationWarning>
-            <head></head>
+        <html className={sora.variable} suppressHydrationWarning>
+            <head />
             <body suppressHydrationWarning className='overflow-hidden'>
-                <ThemeProvider>
+                <ThemeProvider attribute='class'>
                     <NoiseBackground />
                     {children}
                 </ThemeProvider>

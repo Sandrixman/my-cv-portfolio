@@ -1,78 +1,160 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useTranslations } from "next-intl"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 
-const projects = [
+type Project = {
+    id: number
+    title: string
+    category: string
+    image: string
+    description: string
+}
+
+const projects: Project[] = [
     {
         id: 1,
         title: "Creative Studio",
-        description: "Вебсайт креативної агенції з анімаціями та smooth scroll.",
-        image: "/projects/studio.webp",
-        link: "https://example.com/studio",
+        category: "web",
+        image: "/images/demo1.jpg",
+        description: "Вебсайт агенції",
     },
     {
         id: 2,
         title: "Portfolio v2",
-        description: "Мій редизайн портфоліо з темами та локалізацією.",
-        image: "/projects/portfolio.webp",
-        link: "https://example.com/portfolio",
+        category: "portfolio",
+        image: "/images/demo2.jpg",
+        description: "Редизайн портфоліо",
     },
     {
         id: 3,
         title: "E-Commerce UI",
-        description: "Макет магазину з темною темою та адаптивним дизайном.",
-        image: "/projects/shop.webp",
-        link: "https://example.com/shop",
+        category: "shop",
+        image: "/images/demo3.jpg",
+        description: "Інтернет-магазин",
+    },
+    {
+        id: 4,
+        title: "Landing Page",
+        category: "web",
+        image: "/images/demo4.jpg",
+        description: "Лендінг з анімацією",
+    },
+    {
+        id: 5,
+        title: "UI Kit",
+        category: "design",
+        image: "/images/demo5.jpg",
+        description: "Компонентна бібліотека",
     },
 ]
 
 export default function ProjectsSection() {
+    const [filterKey, setFilterKey] = useState("*")
+    const gridRef = useRef<HTMLDivElement | null>(null)
+    const iso = useRef<any>(null)
+
     const t = useTranslations("Projects")
 
-    return (
-        <section id='projects' data-label={t("label")} className='relative z-10 py-20 md:py-28'>
-            <div className='container mx-auto px-6'>
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-                    viewport={{ once: true }}
-                    className='text-3xl md:text-4xl font-semibold mb-12 text-center'
-                >
-                    Мої проєкти
-                </motion.h2>
+    useEffect(() => {
+        let isoInstance: any
+        let cleanup = false
 
-                <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8'>
-                    {projects.map((p, i) => (
-                        <motion.a
+        // Import libraries only in the browser
+        ;(async () => {
+            const Isotope = (await import("isotope-layout")).default
+            const imagesLoaded = (await import("imagesloaded")).default
+
+            if (!gridRef.current) return
+
+            // Initial Isotope
+            isoInstance = new Isotope(gridRef.current, {
+                itemSelector: ".item",
+                layoutMode: "fitRows",
+                transitionDuration: "0.5s",
+                hiddenStyle: { opacity: 0, transform: "scale(0.1)" },
+                visibleStyle: { opacity: 1, transform: "scale(1)" },
+            })
+
+            // We wait for the images to load, then update the layout
+            imagesLoaded(gridRef.current, () => {
+                if (!cleanup) isoInstance.layout()
+            })
+
+            iso.current = isoInstance
+        })()
+
+        return () => {
+            cleanup = true
+            isoInstance?.destroy()
+        }
+    }, [])
+
+    // filter
+    useEffect(() => {
+        if (!iso.current) return
+        filterKey === "*"
+            ? iso.current.arrange({ filter: "*" })
+            : iso.current.arrange({ filter: `.${filterKey}` })
+    }, [filterKey])
+
+    const categories = ["all", "web", "portfolio", "shop", "design"]
+
+    return (
+        <section id='projects' data-label={t("label")} className='py-20 justify-start'>
+            <div className='container mx-auto px-6'>
+                <h2 className='text-3xl md:text-4xl font-semibold mb-10 text-center'>
+                    Мої проєкти
+                </h2>
+
+                {/* FILTER BUTTONS */}
+                <div className='flex justify-center gap-3 mb-12 flex-wrap'>
+                    {categories.map((c) => {
+                        const key = c === "all" ? "*" : c
+                        const active = filterKey === key
+                        return (
+                            <button
+                                key={c}
+                                onClick={() => setFilterKey(key)}
+                                className={`px-4 py-2 rounded-full border text-sm font-medium transition-colors duration-200 ${
+                                    active
+                                        ? "bg-[var(--color-accent)] text-white"
+                                        : "bg-[var(--color-bg-alt)] hover:bg-[var(--color-bg)]"
+                                }`}
+                            >
+                                {c.toUpperCase()}
+                            </button>
+                        )
+                    })}
+                </div>
+
+                {/* GRID */}
+                <div
+                    ref={gridRef}
+                    className='flex flex-wrap justify-center gap-5 mx-auto max-w-[1200px]'
+                >
+                    {projects.map((p) => (
+                        <div
                             key={p.id}
-                            href={p.link}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            className='group block overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-alt)] transition-transform hover:-translate-y-1 hover:shadow-lg'
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.1, duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-                            viewport={{ once: true }}
+                            className={`item ${p.category} flex-1 min-w-[260px] max-w-[320px] basis-[300px] m-6 relative rounded-2xl overflow-hidden border bg-[var(--color-bg-alt)] shadow-sm`}
                         >
-                            <div className='relative w-full h-52 overflow-hidden'>
+                            <div className='relative w-full h-[220px]'>
                                 <Image
                                     src={p.image}
                                     alt={p.title}
                                     fill
-                                    className='object-cover transition-transform duration-500 group-hover:scale-105'
+                                    sizes='(max-width:640px) 100vw, (max-width:1024px) 45vw, (max-width:1440px) 30vw, 320px'
+                                    className='object-cover'
                                 />
                             </div>
-
                             <div className='p-5'>
                                 <h3 className='text-lg font-semibold mb-1'>{p.title}</h3>
-                                <p className='text-[var(--color-text-muted)] text-sm leading-relaxed'>
+                                <p className='text-sm text-[var(--color-text-muted)]'>
                                     {p.description}
                                 </p>
                             </div>
-                        </motion.a>
+                        </div>
                     ))}
                 </div>
             </div>

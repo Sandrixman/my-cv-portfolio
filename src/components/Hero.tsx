@@ -10,7 +10,7 @@ const techStack = [
     "React",
     "Next.js",
     "TypeScript",
-    "GITHUB",
+    "GitHub",
     "Bubble.io",
     "Node.js",
 ]
@@ -51,7 +51,7 @@ export default function Hero() {
                     {techStack.map((tech) => (
                         <span
                             key={tech}
-                            className='px-3 pt-1 text-sm rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700'
+                            className='px-3 pt-1 h-7 text-sm rounded-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700'
                         >
                             {tech}
                         </span>

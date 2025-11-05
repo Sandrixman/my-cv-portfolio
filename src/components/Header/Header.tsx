@@ -54,7 +54,7 @@ export default function Header() {
                         <button
                             key={link.id}
                             onClick={() => handleNavClick(link.id)}
-                            className='text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors duration-200'
+                            className='text-[var(--color-text-muted)] hover:text-[var(--color-accent)] text-lg transition-colors duration-200'
                         >
                             {link.label}
                         </button>

@@ -1,4 +1,10 @@
 {
+    "Meta": {
+        "title": "Oleksandr Novak — Front-End Developer | Portfolio & Projects",
+        "description": "Front-end developer experienced in building modern web applications with React, Next.js, and Bubble. Explore my portfolio, technical skills, and completed projects",
+        "og_title": "Oleksandr Novak — Front-End Developer crafting modern web experiences",
+        "og_description": "Building responsive websites and apps with React, Next.js, and Bubble. Explore my projects and see how I can help your business grow"
+    },
     "Hero": {
         "label": "Main",
         "title": "Oleksander Novak",

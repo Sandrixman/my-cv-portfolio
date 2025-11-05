@@ -4,7 +4,7 @@
 
 @layer base {
     :root {
-        --color-bg: #f8f9fb;
+        --color-bg: #fcfcf3;
         --color-bg-muted: #f8f9fb;
         --color-card: #f3f4f6;
         --color-border: #e5e7eb;
@@ -47,7 +47,6 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        background: rgb(244 246 248);
         background: var(--color-bg);
         color: var(--color-text);
         @apply font-sora antialiased transition-colors duration-500;
@@ -89,10 +88,14 @@
         );
         border-radius: 4px;
     }
-}
+    ::-webkit-scrollbar-track {
+        background: url("/images/noise.jpg");
+        background-size: cover;
+    }
 
-.gradient-text {
-    background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    .gradient-text {
+        background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
