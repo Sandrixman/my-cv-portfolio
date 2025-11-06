@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { scrollToSection } from "@/utils/scrollToSection"
-import LangSwitcher from "@/components/LangSwitcher/LangSwitcher"
+import LangSwitcher from "@/components/LanguageSelect/LanguageSelect"
 import ThemeToggle2 from "@/components/ThemeToggle2/ThemeToggle2"
 
 export default function MobileMenu({

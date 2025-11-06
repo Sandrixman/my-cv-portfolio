@@ -16,7 +16,8 @@
         "label": "Contact"
     },
     "Projects": {
-        "label": "Projects"
+        "label": "Projects",
+        "title": "My projects"
     },
     "Skills": {
         "label": "Skills"

@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import { Moon, Sun } from "lucide-react"
 import styles from "./ThemeToggle2.module.css"
 
 export default function ThemeToggle2() {
@@ -24,15 +25,16 @@ export default function ThemeToggle2() {
     }
 
     return (
-        <div className='relative w-[75px] h-[24px]'>
+        <div className='relative w-[60px] h-[24px]'>
             <div
                 className={`${styles.wrapper} ${isDark ? styles.on : styles.off}`}
                 onClick={handleToggle}
                 role='switch'
                 aria-checked={isDark}
             >
+                <Moon className='absolute top-[5px] right-1 w-[14px] h-[14px]' />
+                <Sun className='absolute top-[5px] left-1 w-[14px] h-[14px]' />
                 <div className={styles.toggle}>
-                    <div className={styles.detail}></div>
                     <div className={styles.detail}></div>
                     <div className={styles.detail}></div>
                 </div>

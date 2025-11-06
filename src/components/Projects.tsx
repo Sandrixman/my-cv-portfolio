@@ -105,7 +105,7 @@ export default function ProjectsSection() {
         <section id='projects' data-label={t("label")} className='py-20 justify-start'>
             <div className='container mx-auto px-6'>
                 <h2 className='text-3xl md:text-4xl font-semibold mb-10 text-center'>
-                    Мої проєкти
+                    {t("title")}
                 </h2>
 
                 {/* FILTER BUTTONS */}

@@ -1,8 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code2 } from "lucide-react"
 import { useTranslations } from "next-intl"
+import HeroButton from "./HeroButton"
 
 const techStack = [
     "HTML5/CSS3",
@@ -28,9 +28,9 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className='relative z-10 max-w-3xl'
+                className='relative max-w-3xl'
             >
-                <h1 className='text-5xl md:text-6xl font-extrabold mb-4 leading-tight gradient-text'>
+                <h1 className='text-6xl font-extrabold mb-4 leading-tight gradient-text'>
                     {t("title")}
                 </h1>
 
@@ -57,16 +57,7 @@ export default function Hero() {
                         </span>
                     ))}
                 </motion.div>
-
-                <motion.a
-                    href='#projects'
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition-all shadow-lg'
-                >
-                    <Code2 className='w-4 h-4' />
-                    {t("cta")}
-                </motion.a>
+                <HeroButton text={t("cta")} />
             </motion.div>
         </section>
     )

@@ -5,7 +5,7 @@ import { useScrollHide } from "./hooks/useScrollHide"
 import BurgerButton from "./BurgerButton"
 import MobileMenu from "./MobileMenu"
 import Portal from "@/components/Portal"
-import LangSwitcher from "@/components/LangSwitcher/LangSwitcher"
+import LanguageSelect from "@/components/LanguageSelect/LanguageSelect"
 import ThemeToggle2 from "@/components/ThemeToggle2/ThemeToggle2"
 
 export default function Header() {
@@ -38,7 +38,7 @@ export default function Header() {
         <>
             <header
                 className={`fixed top-0 left-0 w-full h-[56px]
-                    flex items-center justify-between px-6 z-[1000]
+                    flex items-center justify-between px-6 z-[15]
                     border-b border-[var(--color-border)]
                     backdrop-blur-md transition-all duration-500
                     ${hidden && pastHero ? "-translate-y-full" : "translate-y-0"}`}
@@ -49,7 +49,7 @@ export default function Header() {
                 </div>
 
                 {/* Desktop nav */}
-                <nav className='hidden md:flex items-center gap-8 text-[0.95rem] font-medium whitespace-nowrap'>
+                <nav className='hidden md:flex items-center gap-8 text-[0.95rem] font-medium whitespace-nowrap absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
                     {navLinks.map((link) => (
                         <button
                             key={link.id}
@@ -62,8 +62,8 @@ export default function Header() {
                 </nav>
 
                 {/* Desktop switchers */}
-                <div className='hidden md:flex items-center gap-3'>
-                    <LangSwitcher />
+                <div className='hidden md:flex items-center gap-6'>
+                    <LanguageSelect />
                     <ThemeToggle2 />
                 </div>
 

@@ -69,8 +69,8 @@ export default function VerticalNav() {
     }, [sections])
 
     return (
-        <nav className='fixed left-5 top-1/2 -translate-y-1/2 z-[2000] hidden md:block'>
-            <div className='relative flex flex-col items-start gap-8 pl-[8px] group'>
+        <nav className='fixed left-5 top-1/2 -translate-y-1/2 z-[15] hidden md:block'>
+            <div className='relative flex flex-col items-start gap-16 pl-[8px] group'>
                 <div className='absolute left-[13px] top-[5px] bottom-[5px] w-[2px] bg-[var(--color-progressbar)] rounded-full overflow-hidden'>
                     {/* color progress */}
                     <motion.div

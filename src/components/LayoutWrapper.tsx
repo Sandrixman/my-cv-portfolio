@@ -35,7 +35,7 @@ export default function LayoutWrapper({ children }: { children: React.ReactNode 
             >
                 <Header />
                 <VerticalNav />
-                <main className='pt-[56px] w-full'>{children}</main>
+                {children}
             </motion.div>
 
             {/* --- BRAND PRELOADER --- */}
