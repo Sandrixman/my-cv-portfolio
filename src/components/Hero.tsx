@@ -10,7 +10,7 @@ const techStack = [
     "React",
     "Next.js",
     "TypeScript",
-    "GitHub",
+    "Tailwind",
     "Bubble.io",
     "Node.js",
 ]
