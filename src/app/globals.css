@@ -55,7 +55,7 @@
     }
 
     section {
-        @apply min-h-screen flex flex-col items-center justify-center px-6;
+        @apply min-h-[600px] flex flex-col items-center justify-center px-6;
     }
 
     a {
