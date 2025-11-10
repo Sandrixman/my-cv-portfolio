@@ -32,8 +32,8 @@ export default function ThemeToggle2() {
                 role='switch'
                 aria-checked={isDark}
             >
-                <Moon className='absolute top-[5px] right-1 w-[14px] h-[14px]' />
-                <Sun className='absolute top-[5px] left-1 w-[14px] h-[14px]' />
+                <Moon className='absolute top-[5px] right-[6px] w-[14px] h-[14px]' />
+                <Sun className='absolute top-[5px] left-[6px] w-[14px] h-[14px]' />
                 <div className={styles.toggle}>
                     <div className={styles.detail}></div>
                     <div className={styles.detail}></div>

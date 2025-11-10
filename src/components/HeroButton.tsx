@@ -1,5 +1,5 @@
+"use client"
 import { Code2, CornerRightDown } from "lucide-react"
-import ArrowDown from "/arrow-down.svg"
 
 type HeroButtonProps = {
     text: string
@@ -8,26 +8,30 @@ type HeroButtonProps = {
 const HeroButton = ({ text }: HeroButtonProps) => {
     return (
         <div className='flex flex-col gap-6 max-w-sm mx-auto relative'>
-            <button className='group relative p-2 rounded-2xl backdrop-blur-xl border-2 border-purple-500/30 bg-gradient-to-br from-purple-900/40 via-black-900/60 to-black/80 shadow-2xl hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1 active:scale-95 transition-all duration-500 ease-out cursor-pointer hover:border-purple-400/60 overflow-hidden'>
-                <div className='absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out'></div>
+            <button
+                onClick={() => window.lenis?.scrollTo("#projects", { offset: 0 })}
+                className='
+                    group relative w-full overflow-hidden rounded-2xl border border-[var(--color-border)]
+                    bg-[var(--color-card)] text-[var(--color-text)]
+                    hover:bg-gradient-to-r hover:from-[var(--color-gradient-start)] hover:to-[var(--color-gradient-end)]
+                    hover:text-white transition-all duration-500 ease-out
+                    shadow-[0_4px_14px_-2px_rgba(0,0,0,0.1)] hover:shadow-[0_6px_20px_-4px_var(--color-accent)]
+                    active:scale-95
+                    '
+            >
+                {/* subtle animated gradient line */}
+                <div className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
+                    <div className='absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[1200ms] ease-out' />
+                </div>
 
-                <div className='absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/10 via-purple-400/20 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
-
-                <div className='relative z-10 flex items-center gap-4'>
-                    <div className='p-2 rounded-lg bg-gradient-to-br from-purple-500/30 to-purple-600/10 backdrop-blur-sm group-hover:from-purple-400/40 group-hover:to-purple-500/20 transition-all duration-300'>
-                        <Code2 className='w-6 h-6' />
+                <div className='relative z-10 flex items-center justify-between px-6 py-3'>
+                    <div className='flex items-center gap-4'>
+                        <div className='p-2 rounded-lg bg-[var(--color-accent)]/10 group-hover:bg-white/20 transition-colors duration-300'>
+                            <Code2 className='w-5 h-5 text-[var(--color-accent)] group-hover:text-white transition-colors duration-300' />
+                        </div>
+                        <span className='font-semibold text-lg'>{text}</span>
                     </div>
-                    <div className='flex-1 text-left'>
-                        <a
-                            href='#projects'
-                            className='text-purple-400 font-bold text-lg group-hover:text-purple-300 transition-colors duration-300 drop-shadow-sm'
-                        >
-                            {text}
-                        </a>
-                    </div>
-                    <div className='opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300'>
-                        <CornerRightDown className='w-8 h-8 stroke-purple-600' />
-                    </div>
+                    <CornerRightDown className='w-6 h-6 text-[var(--color-accent)] group-hover:text-white group-hover:translate-x-1 transition-all duration-300' />
                 </div>
             </button>
         </div>

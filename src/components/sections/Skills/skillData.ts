@@ -28,8 +28,9 @@ export const skillData: SkillsTab[] = [
             { name: "Node.js", img: "/icons/nodejs.svg" },
             { name: "Express.js", img: "/icons/express.png" },
             { name: "MongoDB", img: "/icons/mongodb.svg" },
-            { name: "REST APIs", img: "/icons/api.webp" },
             { name: "Postman", img: "/icons/postman.svg" },
+            { name: "REST APIs", img: "/icons/api.webp" },
+            { name: "Stripe API", img: "/icons/stripe.svg" },
         ],
     },
     {
@@ -38,11 +39,14 @@ export const skillData: SkillsTab[] = [
         skills: [{ name: "Bubble.io", img: "/icons/bubble.png" }],
     },
     {
-        name: "Libraries",
+        name: "Animation Libraries",
         color: "#facc15",
         skills: [
             { name: "GSAP", img: "/icons/gsap.png" },
             { name: "Highway", img: "/icons/highway.png" },
+            { name: "Three.js", img: "/icons/three-js.svg" },
+            { name: "Framer Motion", img: "/icons/motion.png" },
+            { name: "Lenis", img: "/icons/lenis.webp" },
         ],
     },
     {
@@ -51,6 +55,7 @@ export const skillData: SkillsTab[] = [
         skills: [
             { name: "Docker", img: "/icons/docker.svg" },
             { name: "React Native", img: "/icons/react-native.svg" },
+            { name: "Payload CMS", img: "/icons/payload-cms.jpg" },
         ],
     },
 ]

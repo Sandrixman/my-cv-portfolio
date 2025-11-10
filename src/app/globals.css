@@ -5,7 +5,7 @@
 @layer base {
     :root {
         --color-bg: #fcfcf3;
-        --color-bg-muted: #f8f9fb;
+        --color-bg-muted: #ececec;
         --color-card: #f3f4f6;
         --color-border: #e5e7eb;
         --color-text: #0f0f13;
@@ -55,7 +55,7 @@
     }
 
     section {
-        @apply min-h-[600px] flex flex-col items-center justify-center px-6;
+        @apply min-h-[600px] flex flex-col items-center justify-center px-6 lg:px-12 xl:px-[40px];
     }
 
     a {
@@ -95,5 +95,10 @@
         background: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-end));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    /* Page transition styles */
+    body.page-is-changing {
+        overflow: hidden;
     }
 }

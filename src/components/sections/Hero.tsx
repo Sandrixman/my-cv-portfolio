@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
-import HeroButton from "./HeroButton"
+import HeroButton from "../HeroButton"
 
 const techStack = [
     "HTML5/CSS3",

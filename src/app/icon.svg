@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="letterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#c084fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#1a191a"/>
+  <!-- Extra large calligraphic O - almost full height -->
+  <ellipse cx="11" cy="16" rx="7" ry="8.5" stroke="url(#letterGradient)" stroke-width="3.5" fill="none"/>
+  <!-- Extra large calligraphic N - almost full height -->
+  <path d="M19.5 7 L19.5 25 M19.5 7 C21 7, 22.5 10.5, 24 14 C25.5 17.5, 27 21, 27.5 25 M27.5 7 L27.5 25" stroke="url(#letterGradient)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,12 +1,19 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { Miss_Fajardose } from "next/font/google"
 import { useScrollHide } from "./hooks/useScrollHide"
 import BurgerButton from "./BurgerButton"
 import MobileMenu from "./MobileMenu"
 import Portal from "@/components/Portal"
 import LanguageSelect from "@/components/LanguageSelect/LanguageSelect"
 import ThemeToggle2 from "@/components/ThemeToggle2/ThemeToggle2"
+import TransitionLink from "@/components/PageTransition/TransitionLink"
+
+const missFajardose = Miss_Fajardose({
+    subsets: ["latin"],
+    weight: ["400"],
+  })
 
 export default function Header() {
     const { hidden, pastHero } = useScrollHide()
@@ -44,9 +51,12 @@ export default function Header() {
                     ${hidden && pastHero ? "-translate-y-full" : "translate-y-0"}`}
             >
                 {/* Logo */}
-                <div className='font-semibold text-[2rem] md:text-[1.2rem] gradient-text tracking-wide whitespace-nowrap'>
-                    Oleksandr Novak
-                </div>
+                <TransitionLink
+                    href='/'
+                    className={`${missFajardose.className} text-4xl md:text-6xl gradient-text tracking-wider whitespace-nowrap`}
+                >
+                    Oleksander Novak
+                </TransitionLink>
 
                 {/* Desktop nav */}
                 <nav className='hidden md:flex items-center gap-8 text-[0.95rem] font-medium whitespace-nowrap absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>

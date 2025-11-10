@@ -19,6 +19,7 @@ module.exports = {
             },
             fontFamily: {
                 sora: ["var(--font-sora)", "sans-serif"],
+                "miss-fajardose": ['"Miss Fajardose"', "cursive", "serif"],
             },
         },
     },
