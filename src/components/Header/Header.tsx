@@ -13,7 +13,7 @@ import TransitionLink from "@/components/PageTransition/TransitionLink"
 const missFajardose = Miss_Fajardose({
     subsets: ["latin"],
     weight: ["400"],
-  })
+})
 
 export default function Header() {
     const { hidden, pastHero } = useScrollHide()
@@ -44,7 +44,7 @@ export default function Header() {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 w-full h-[56px]
+                className={`fixed top-0 left-0 w-full h-[56px] 2xl:h-[100px]
                     flex items-center justify-between px-6 z-[15]
                     border-b border-[var(--color-border)]
                     backdrop-blur-md transition-all duration-500
@@ -53,7 +53,7 @@ export default function Header() {
                 {/* Logo */}
                 <TransitionLink
                     href='/'
-                    className={`${missFajardose.className} text-4xl md:text-6xl gradient-text tracking-wider whitespace-nowrap`}
+                    className={`${missFajardose.className} text-6xl gradient-text tracking-wider whitespace-nowrap`}
                 >
                     Oleksander Novak
                 </TransitionLink>

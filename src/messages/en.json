@@ -7,19 +7,93 @@
     },
     "Hero": {
         "label": "Main",
-        "title": "Oleksandr Novak",
+        "title": "Oleksandr",
+        "titleLast": "Novak",
         "subtitle": "Front-End / Bubble Developer",
+        "greeting": "Hello",
+        "intro": "Here's who I am & what I do",
         "description": "I approach every project with responsibility. I love when everything is done neatly and with taste",
-        "cta": "View My Work"
+        "description2": "I create modern web applications with a focus on quality, aesthetics, and user experience. Every project is an opportunity to create something special.",
+        "ctaResume": "Resume",
+        "ctaProjects": "Projects"
     },
     "Contact": {
-        "label": "Contact"
+        "label": "Contact",
+        "title": "Get in Touch",
+        "subtitle": "Let's connect and discuss your next project",
+        "socialMedia": "Social Media",
+        "contactInfo": "Contact Information",
+        "phone": "Phone",
+        "email": "Email",
+        "address": "Address: Khmelnitsky, Ukraine",
+        "copy": "Copy",
+        "copied": "Copied!"
     },
     "Projects": {
         "label": "Projects",
         "title": "My projects"
     },
     "Skills": {
-        "label": "Skills"
+        "label": "Skills",
+        "title": "My Hard Skills"
+    },
+    "About": {
+        "label": "About",
+        "title": "About Me",
+        "paragraph1": "I'm a front-end developer with a deep interest in modern web technologies, UI animations, and interactive user experiences. I work with React, Next.js, TypeScript, GSAP, Lenis, integrate external services (Cloudflare Stream, Stripe, Calendly), and optimize performance and design down to the pixel.",
+        "paragraph2": "I have experience with Bubble.io, creating scalable no-code solutions with logic, dynamic filters, and custom interactions.",
+        "paragraph3": "In my work, I value code cleanliness, logic, aesthetics, and efficiency. I constantly improve — from precise element positioning to building complex JavaScript architectures. I love when an interface doesn't just work, but comes alive.",
+        "achievements": {
+            "title": "Achievements",
+            "projects": {
+                "label": "Completed Projects",
+                "value": "10+"
+            },
+            "experience": {
+                "label": "Years of Commercial Experience",
+                "value": "1+"
+            },
+            "technologies": {
+                "label": "Technologies Mastered",
+                "value": "15+"
+            },
+            "clients": {
+                "label": "Satisfied Clients",
+                "value": "10+"
+            }
+        }
+    },
+    "Experience": {
+        "label": "Experience",
+        "title": "Work Experience & Education",
+        "work": "Work",
+        "education": "Education",
+        "work1": {
+            "title": "Front-End Developer",
+            "company": "Freelance / Projects",
+            "period": "2020 - Present",
+            "description": "Developing modern web applications with React and Next.js. Creating interactive interfaces with animations, API integration, and third-party services. Optimizing performance and UX."
+        },
+        "work2": {
+            "title": "Bubble.io Developer",
+            "company": "No-Code Solutions",
+            "period": "2021 - Present",
+            "description": "Building scalable no-code applications on Bubble.io platform. Creating complex workflows, dynamic filters, external API integration, and custom logic configuration."
+        },
+        "education1": {
+            "title": "Self-education & Courses",
+            "institution": "Online Platforms & Communities",
+            "period": "2018 - Present",
+            "description": "Continuous learning through online courses, documentation, and developer communities. Focus on modern technologies: React, Next.js, TypeScript, GSAP, animations, and UX design."
+        }
+    },
+    "Footer": {
+        "copyright": "© 2024 Oleksandr Novak. All rights reserved.",
+        "madeWith": "Made with",
+        "and": "and",
+        "rights": "All rights reserved.",
+        "quickLinks": "Quick Links",
+        "social": "Social",
+        "contact": "Contact"
     }
 }

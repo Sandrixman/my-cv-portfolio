@@ -6,6 +6,8 @@
     :root {
         --color-bg: #fcfcf3;
         --color-bg-muted: #ececec;
+        --color-hero-card: #f4ece6;
+        --color-hero-overlay: #e6dace;
         --color-card: #f3f4f6;
         --color-border: #e5e7eb;
         --color-text: #0f0f13;
@@ -26,6 +28,8 @@
         --color-bg: #1a191a;
         --color-bg-muted: #17171c;
         --color-card: #1e1e25;
+        --color-hero-card: #272627;
+        --color-hero-overlay: #1a191a;
         --color-border: #2a2a33;
         --color-text: #ffffff;
         --color-text-muted: #9ca3af;
@@ -55,7 +59,7 @@
     }
 
     section {
-        @apply min-h-[600px] flex flex-col items-center justify-center px-6 lg:px-12 xl:px-[40px];
+        @apply flex flex-col items-center max-w-[1440px] mx-auto px-6 sm:px-12 2xl:px-0 py-[90px] xl:py-[120px];
     }
 
     a {
@@ -77,6 +81,7 @@
 
     ::-webkit-scrollbar {
         width: 8px;
+        height: 8px;
     }
     ::-webkit-scrollbar-thumb {
         background: linear-gradient(

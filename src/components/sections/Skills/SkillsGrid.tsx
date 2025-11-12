@@ -33,7 +33,7 @@ export default function SkillGrid() {
     const itemVariants = {
         initial: (dir: string) => ({
             x: dir === "right" ? width * 0.4 : -width * 0.4,
-            y: 30,
+            y: 0,
             rotateZ: dir === "right" ? 5 : -5,
             opacity: 0,
             scale: 0.9,
@@ -47,8 +47,8 @@ export default function SkillGrid() {
             transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
         },
         exit: (dir: string) => ({
-            x: dir === "right" ? -width * 1.1 : width * 1.1,
-            y: -50,
+            x: dir === "right" ? -width * 2.5 : width * 2.5,
+            y: -150,
             rotateZ: dir === "right" ? -10 : 10,
             opacity: 1,
             scale: 0.9,
@@ -58,7 +58,10 @@ export default function SkillGrid() {
     }
 
     return (
-        <div className='relative min-h-[280px] flex justify-center items-center mb-6'>
+        <div
+            className='relative h-[210px] sm:h-[260px] lg:h-[280px] w-[100vw]
+                    overflow-x-scroll md:overflow-x-hidden'
+        >
             <AnimatePresence mode='wait' custom={direction}>
                 <motion.ul
                     key={currentTab}
@@ -76,11 +79,13 @@ export default function SkillGrid() {
                         exit: (dir: string) => ({
                             transition: {
                                 staggerChildren: 0.07,
-                                staggerDirection: dir === "right" ? -1 : 1,
+                                staggerDirection: dir === "right" ? 1 : -1,
                             },
                         }),
                     }}
-                    className='flex flex-wrap gap-4 justify-center items-center will-change-transform max-w-[1100px]'
+                    className='flex flex-wrap gap-4 justify-center items-start will-change-transform
+                            w-max min-w-full max-w-[580px] sm:max-w-[700px] 2xl:min-w-[1440px] 2xl:max-w-[1440px]
+                            pt-[25px] lg:pt-[40px] mx-auto'
                 >
                     {skillData[currentTab].skills.map((skill: Skill) => (
                         <motion.li
@@ -90,7 +95,9 @@ export default function SkillGrid() {
                             variants={itemVariants}
                             onClick={(e) => handleOpen(skill, e)}
                             data-label='skill'
-                            className='flex flex-col items-center w-[120px] text-center cursor-pointer'
+                            className='flex flex-col items-center
+                                    w-[75px] sm:w-[90px] lg:w-[120px]
+                                    text-center cursor-pointer'
                         >
                             <motion.div
                                 layoutId={`${skill.name}-img`}
@@ -101,14 +108,19 @@ export default function SkillGrid() {
                                     borderColor: accentColor,
                                     transition: { type: "spring", stiffness: 250, damping: 18 },
                                 }}
-                                className='w-[80px] h-[80px] flex items-center justify-center border border-[#ffffff33] rounded-xl bg-[var(--color-progressbar)] shadow-sm backdrop-blur-sm transition-all'
+                                className='w-[60px] sm:w-[80px] lg:w-[90px]
+                                        h-[60px] sm:h-[80px]
+                                        flex items-center justify-center
+                                        border border-[#ffffff33] rounded-xl
+                                        bg-[var(--color-progressbar)] shadow-sm backdrop-blur-sm transition-all'
                             >
                                 <Image
                                     src={skill.img}
                                     alt={skill.name}
-                                    width={60}
-                                    height={60}
-                                    className='object-contain'
+                                    width={0}
+                                    height={0}
+                                    sizes='100vw'
+                                    className='object-contain w-[40px] h-[40px] md:w-[60px] md:h-[60px]'
                                 />
                             </motion.div>
                             <h4 className='mt-3 text-sm font-medium'>{skill.name}</h4>

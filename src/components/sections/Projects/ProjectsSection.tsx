@@ -55,7 +55,7 @@ export default function ProjectsSection() {
     }, [filterKey])
 
     return (
-        <section id='projects' data-label={t("label")} className='py-20 justify-start'>
+        <section id='projects' data-label={t("label")} className='2xl:max-w-[1460px]'>
             <div className='container mx-auto'>
                 <h2 className='text-3xl md:text-4xl font-semibold mb-10 text-center'>
                     {t("title")}

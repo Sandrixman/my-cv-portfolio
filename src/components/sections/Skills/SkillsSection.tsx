@@ -9,8 +9,8 @@ export default function SkillsSection() {
     const t = useTranslations("Skills")
 
     return (
-        <section id='skills' data-label={t("label")} className='py-20 text-center'>
-            <h2 className='text-3xl font-semibold mb-6'>My Skills</h2>
+        <section id='skills' data-label={t("label")}>
+            <h2 className='text-3xl font-semibold mb-6'>{t("title")}</h2>
             <SkillsProvider>
                 <SkillGrid />
                 <SkillTabs />
