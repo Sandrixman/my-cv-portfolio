@@ -13,7 +13,7 @@ export default function SkillTabs() {
     }
 
     return (
-        <div className='inline-flex border-t-4 border-gray-700 pt-6 gap-6 flex-wrap justify-center mt-10'>
+        <div className='inline-flex border-t-4 border-gray-700 pt-6 gap-1 sm:gap-6 flex-wrap justify-center mt-10'>
             {skillData.map((tab, i) => (
                 <button
                     key={tab.name}

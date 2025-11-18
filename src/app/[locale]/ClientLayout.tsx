@@ -1,31 +1,33 @@
 "use client"
 
-import { usePathname } from "next/navigation"
+import { useEffect } from "react"
+import { motion } from "framer-motion"
 import { usePageTransition } from "@/contexts/PageTransitionContext"
 import PageTransition from "@/components/PageTransition/PageTransition"
+import { usePathname } from "next/navigation"
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
-    const { isAnimating, isExiting, shouldHideContent } = usePageTransition()
+    const { isAnimating, isExiting, completeTransition } = usePageTransition()
     const pathname = usePathname()
 
-    // Hide content if exiting or if we should hide content (during transition)
-    const isContentHidden = isExiting || shouldHideContent
+    useEffect(() => {
+        // Нова сторінка замаунтилась → завершуємо перехід
+        completeTransition()
+    }, [pathname, completeTransition])
 
     return (
         <>
-            <div 
-                key={pathname} 
-                className={isAnimating ? "page-is-changing" : ""}
+            <motion.div
+                key={pathname}
                 style={{
-                    // Hide content during exit animation to prevent new content from showing
-                    visibility: isContentHidden ? 'hidden' : 'visible',
-                    opacity: isContentHidden ? 0 : 1,
-                    pointerEvents: isContentHidden ? 'none' : 'auto',
-                    transition: 'opacity 0.2s ease-in-out, visibility 0.2s ease-in-out',
+                    visibility: isExiting ? "hidden" : "visible",
+                    opacity: isExiting ? 0 : 1,
+                    transition: "opacity .3s ease",
                 }}
             >
                 {children}
-            </div>
+            </motion.div>
+
             <PageTransition isAnimating={isAnimating} />
         </>
     )

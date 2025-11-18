@@ -30,6 +30,14 @@ export default function Experience() {
             period: t("education1.period"),
             description: t("education1.description"),
         },
+        {
+            id: "exp3",
+            type: "work",
+            title: t("work3.title"),
+            company: t("work3.company"),
+            period: t("work3.period"),
+            description: t("work3.description"),
+        },
     ]
 
     return (
@@ -74,11 +82,15 @@ export default function Experience() {
                                         <div className='p-6 rounded-2xl backdrop-blur-lg border border-white/10 bg-gradient-to-br from-black/60 to-black/40 shadow-lg'>
                                             <div className='flex items-start justify-between mb-3'>
                                                 <div className='flex-1'>
-                                                    <h3 className='text-xl font-bold text-white mb-1'>{exp.title}</h3>
+                                                    <h3 className='text-xl font-bold text-white mb-1'>
+                                                        {exp.title}
+                                                    </h3>
                                                     <p className='text-sm font-medium text-[var(--color-accent)] mb-2'>
                                                         {exp.company}
                                                     </p>
-                                                    <p className='text-xs text-white/60 mb-3'>{exp.period}</p>
+                                                    <p className='text-xs text-white/60 mb-3'>
+                                                        {exp.period}
+                                                    </p>
                                                 </div>
                                                 <span
                                                     className={`px-3 py-1 rounded-full text-xs font-medium ${
@@ -87,10 +99,14 @@ export default function Experience() {
                                                             : "bg-[var(--color-success)]/20 text-[var(--color-success)]"
                                                     }`}
                                                 >
-                                                    {exp.type === "work" ? t("work") : t("education")}
+                                                    {exp.type === "work"
+                                                        ? t("work")
+                                                        : t("education")}
                                                 </span>
                                             </div>
-                                            <p className='text-sm text-white/80 leading-relaxed'>{exp.description}</p>
+                                            <p className='text-sm text-white/80 leading-relaxed'>
+                                                {exp.description}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -110,14 +126,20 @@ export default function Experience() {
                                                                     : "bg-[var(--color-success)]/20 text-[var(--color-success)]"
                                                             }`}
                                                         >
-                                                            {exp.type === "work" ? t("work") : t("education")}
+                                                            {exp.type === "work"
+                                                                ? t("work")
+                                                                : t("education")}
                                                         </span>
                                                     </div>
-                                                    <h3 className='text-xl font-bold text-white mb-1'>{exp.title}</h3>
+                                                    <h3 className='text-xl font-bold text-white mb-1'>
+                                                        {exp.title}
+                                                    </h3>
                                                     <p className='text-sm font-medium text-[var(--color-accent)] mb-2'>
                                                         {exp.company}
                                                     </p>
-                                                    <p className='text-xs text-white/60 mb-3'>{exp.period}</p>
+                                                    <p className='text-xs text-white/60 mb-3'>
+                                                        {exp.period}
+                                                    </p>
                                                     <p className='text-sm text-white/80 leading-relaxed'>
                                                         {exp.description}
                                                     </p>
@@ -158,14 +180,20 @@ export default function Experience() {
                                                                     : "bg-[var(--color-success)]/20 text-[var(--color-success)]"
                                                             }`}
                                                         >
-                                                            {exp.type === "work" ? t("work") : t("education")}
+                                                            {exp.type === "work"
+                                                                ? t("work")
+                                                                : t("education")}
                                                         </span>
                                                     </div>
-                                                    <h3 className='text-xl font-bold text-white mb-1'>{exp.title}</h3>
+                                                    <h3 className='text-xl font-bold text-white mb-1'>
+                                                        {exp.title}
+                                                    </h3>
                                                     <p className='text-sm font-medium text-[var(--color-accent)] mb-2'>
                                                         {exp.company}
                                                     </p>
-                                                    <p className='text-xs text-white/60 mb-3'>{exp.period}</p>
+                                                    <p className='text-xs text-white/60 mb-3'>
+                                                        {exp.period}
+                                                    </p>
                                                     <p className='text-sm text-white/80 leading-relaxed'>
                                                         {exp.description}
                                                     </p>

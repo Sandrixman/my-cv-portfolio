@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { useTranslations } from "next-intl"
 import { scrollToSection } from "@/utils/scrollToSection"
@@ -81,7 +82,10 @@ export default function Hero() {
             className='max-w-full m-0 relative flex flex-col md:flex-row overflow-hidden px-0 pt-0'
         >
             {/* Left Panel */}
-            <div className='w-full md:w-5/12 h-[30vh] md:h-[calc(100vh-56px)] mt-[180px] md:mt-0 flex items-center relative bg-[var(--color-hero-overlay)]'>
+            <div
+                className='w-full md:w-5/12 h-[30vh] md:h-[calc(100vh-56px)] 2xl:h-[calc(100vh-72px)]
+                        mt-[180px] md:mt-0 flex items-center relative bg-[var(--color-hero-overlay)]'
+            >
                 <motion.div
                     initial={isDesktop ? variants.initial.desktop : variants.initial.mobile}
                     animate={isDesktop ? variants.animate.desktop : variants.animate.mobile}
@@ -97,7 +101,14 @@ export default function Hero() {
                             transition={{ delay: 0.3, duration: 0.6 }}
                             className='mb-6'
                         >
-                            <div className='w-[100px] h-[100px] md:w-[190px] md:h-[190px] rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700'></div>
+                            <div className='relative w-[100px] h-[100px] md:w-[190px] md:h-[190px] rounded-full overflow-hidden'>
+                                <Image
+                                    src='/images/photo2.webp'
+                                    alt='Oleksander Novak'
+                                    fill
+                                    className='object-cover'
+                                />
+                            </div>
                         </motion.div>
 
                         {/* Name */}
@@ -167,25 +178,59 @@ export default function Hero() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className='w-full md:w-7/12 2xl:w-[900px] flex flex-col justify-center items-center px-6 md:pr-12 md:pl-[80px] xl:pr-16 xl:pl-[100px] py-12 md:py-24 bg-[var(--color-hero-overlay)] md:bg-transparent'
             >
-                {/* Greeting */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.8 }}
-                    className='text-7xl md:text-8xl lg:text-9xl font-bold text-[var(--color-text)] mb-4 leading-none'
-                >
-                    {t("greeting")}
-                </motion.h2>
-
-                {/* Introduction */}
-                <motion.p
+                {/* Description Paragraphs */}
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.6 }}
-                    className='text-base md:text-lg text-[var(--color-text)] mb-8 font-normal'
+                    transition={{ delay: 0.9, duration: 0.6 }}
+                    className='space-y-4 max-w-2xl mb-10 text-center'
                 >
-                    {t("intro")}
-                </motion.p>
+                    <p className='text-base text-[var(--color-text)] leading-relaxed font-normal'>
+                        {t("description")}
+                    </p>
+                    <p className='text-base text-[var(--color-text)] leading-relaxed font-normal'>
+                        {t("description2")}
+                    </p>
+                </motion.div>
+
+                {/* Languages */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.0, duration: 0.6 }}
+                    className='w-full max-w-xl mx-auto text-center mb-10'
+                >
+                    <h3 className='text-sm uppercase tracking-wide text-[var(--color-text-muted)] mb-4'>
+                        Languages
+                    </h3>
+
+                    <div className='grid grid-cols-3 gap-4'>
+                        {[
+                            { id: "ua", label: "Ukrainian", level: "Native" },
+                            { id: "ru", label: "Russian", level: "Fluent" },
+                            { id: "en", label: "English", level: "A2–B1" },
+                        ].map((lang, index) => (
+                            <motion.div
+                                key={lang.id}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 1.1 + index * 0.1, duration: 0.4 }}
+                                className='px-4 py-3 rounded-xl backdrop-blur-lg
+                                    border border-[var(--color-border)]
+                                    bg-gradient-to-b from-[var(--color-card)]/60 to-[var(--color-card)]/40
+                                    shadow-[0_3px_10px_-2px_rgba(0,0,0,0.25)]
+                                    transition-all duration-300 select-none'
+                            >
+                                <div className='text-sm font-semibold text-[var(--color-text)] mb-2'>
+                                    {lang.label}
+                                </div>
+                                <div className='text-xs text-[var(--color-text-muted)]'>
+                                    {lang.level}
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
 
                 {/* CTA Button - Gradient style */}
                 <motion.div
@@ -224,21 +269,6 @@ export default function Hero() {
                             <CornerRightDown className='w-6 h-6 text-[var(--color-accent)] group-hover:text-white group-hover:translate-x-1 transition-all duration-300' />
                         </div>
                     </button>
-                </motion.div>
-
-                {/* Description Paragraphs */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9, duration: 0.6 }}
-                    className='space-y-4 max-w-2xl mb-10 md:m-0 text-center'
-                >
-                    <p className='text-base text-[var(--color-text)] leading-relaxed font-normal'>
-                        {t("description")}
-                    </p>
-                    <p className='text-base text-[var(--color-text)] leading-relaxed font-normal'>
-                        {t("description2")}
-                    </p>
                 </motion.div>
             </motion.div>
         </section>

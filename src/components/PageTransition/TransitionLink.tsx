@@ -1,7 +1,8 @@
 "use client"
 
-import { Link as NextIntlLink, useRouter } from "@/i18n/navigation"
+import { Link as NextIntlLink } from "@/i18n/navigation"
 import { usePageTransition } from "@/contexts/PageTransitionContext"
+import { usePathname } from "next/navigation"
 import { ReactNode, MouseEvent } from "react"
 
 type TransitionLinkProps = {
@@ -20,20 +21,22 @@ export default function TransitionLink({
     ...props
 }: TransitionLinkProps) {
     const { startTransition } = usePageTransition()
-    const router = useRouter()
+    const pathname = usePathname()
 
     const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
-        // Only trigger transition for internal links
         if (href.startsWith("/") && !href.startsWith("//")) {
             e.preventDefault()
-            startTransition(href, () => {
-                router.push(href)
-            })
+
+            // Save scroll position before leaving
+            const y = (window as any).lenis?.scroll ?? window.scrollY
+            sessionStorage.setItem(`scroll:${pathname}`, String(y))
+
+            startTransition(href) // 👉 ONLY this
+            onClick?.(e)
+            return
         }
 
-        if (onClick) {
-            onClick(e)
-        }
+        onClick?.(e)
     }
 
     return (

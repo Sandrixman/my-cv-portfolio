@@ -59,8 +59,8 @@ export default function SkillGrid() {
 
     return (
         <div
-            className='relative h-[210px] sm:h-[260px] lg:h-[280px] w-[100vw]
-                    overflow-x-scroll md:overflow-x-hidden'
+            className='relative h-[130px] sm:h-[150px] lg:h-[170px] w-[100vw]
+                    overflow-x-scroll min-[420px]:overflow-x-hidden'
         >
             <AnimatePresence mode='wait' custom={direction}>
                 <motion.ul

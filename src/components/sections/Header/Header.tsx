@@ -44,7 +44,7 @@ export default function Header() {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 w-full h-[56px] 2xl:h-[100px]
+                className={`fixed top-0 left-0 w-full h-[56px] 2xl:h-[72px]
                     flex items-center justify-between px-6 z-[15]
                     border-b border-[var(--color-border)]
                     backdrop-blur-md transition-all duration-500

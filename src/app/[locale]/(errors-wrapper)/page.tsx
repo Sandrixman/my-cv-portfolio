@@ -8,7 +8,7 @@ import Footer from "@/components/sections/Footer"
 
 export default function Home() {
     return (
-        <main className='pt-[56px] w-full relative z-[1]'>
+        <main className='pt-[56px] 2xl:pt-[72px] w-full relative z-[1]'>
             <Hero />
             <About />
             <Skills />

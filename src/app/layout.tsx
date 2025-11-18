@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes"
 import NoiseBackground from "@/components/NoiseBackground/NoiseBackground"
 
 const sora = Sora({
-    subsets: ["latin"],
+    subsets: ["latin", "latin-ext"],
     weight: ["400", "500", "600", "700"],
     variable: "--font-sora",
 })

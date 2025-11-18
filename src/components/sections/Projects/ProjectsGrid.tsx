@@ -24,7 +24,10 @@ const ProjectsGrid = ({ gridRef }: ProjectsGridProps) => {
                 >
                     <TransitionLink
                         href={`/projects/${p.slug}`}
-                        className='block overflow-hidden rounded-2xl border bg-[var(--color-card)] no-underline outline-none text-inherit transition-all duration-300 ease-out group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:shadow-[0_10px_25px_-5px_var(--color-accent)]'
+                        className='block overflow-hidden rounded-2xl border bg-[var(--color-card)]
+                        no-underline outline-none text-inherit shadow-[6px_6px_20px_var(--color-accent-shadow)]
+                        transition-all duration-300 ease-out
+                        group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:shadow-[0_10px_25px_-5px_var(--color-accent)]'
                     >
                         <div className='w-full h-[220px] relative'>
                             <Image

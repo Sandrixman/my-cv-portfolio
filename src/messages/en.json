@@ -69,26 +69,32 @@
         "work": "Work",
         "education": "Education",
         "work1": {
-            "title": "Front-End Developer",
-            "company": "Freelance / Projects",
-            "period": "2020 - Present",
-            "description": "Developing modern web applications with React and Next.js. Creating interactive interfaces with animations, API integration, and third-party services. Optimizing performance and UX."
+            "title": "Front-End / Bubble Developer",
+            "company": "Devix Digital",
+            "period": "feb 2025 - Present",
+            "description": "The previous company went through a rebranding, and since then I have continued working there part-time."
         },
         "work2": {
-            "title": "Bubble.io Developer",
-            "company": "No-Code Solutions",
-            "period": "2021 - Present",
-            "description": "Building scalable no-code applications on Bubble.io platform. Creating complex workflows, dynamic filters, external API integration, and custom logic configuration."
+            "title": "Front-End / Bubble Developer",
+            "company": "StudioPresto",
+            "period": "apr 2024 - feb 2025",
+            "description": "Development of modern interactive and animated websites using HTML/SCSS/JS and libraries such as Highway, GSAP, and more — focused on performance optimization and exceptional UX. Also experienced in building web applications of various complexity on the Bubble.io platform."
+        },
+        "work3": {
+            "title": "Online & offline clothing retail",
+            "company": "Enterpreneur",
+            "period": "2010 - 2022",
+            "description": "Went to buy goods in Turkey and China, communication with clients, improved customer-oriented service, created internet shop."
         },
         "education1": {
-            "title": "Self-education & Courses",
+            "title": "Student (Full-stack Developer)",
             "institution": "Online Platforms & Communities",
-            "period": "2018 - Present",
-            "description": "Continuous learning through online courses, documentation, and developer communities. Focus on modern technologies: React, Next.js, TypeScript, GSAP, animations, and UX design."
+            "period": "dec 2022 - sep 2023",
+            "description": "Continuous learning through online platforms and documentation. Focused on modern technologies: React, Next.js, TypeScript, Node.js."
         }
     },
     "Footer": {
-        "copyright": "© 2024 Oleksandr Novak. All rights reserved.",
+        "copyright": "© 2025 Oleksandr Novak. All rights reserved.",
         "madeWith": "Made with",
         "and": "and",
         "rights": "All rights reserved.",
