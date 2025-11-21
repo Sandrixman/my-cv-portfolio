@@ -10,6 +10,7 @@
         "lint": "eslint"
     },
     "dependencies": {
+        "@react-pdf/renderer": "^4.3.1",
         "@studio-freight/lenis": "^1.0.42",
         "framer-motion": "11.2.10",
         "imagesloaded": "^5.0.0",
@@ -23,6 +24,7 @@
         "react-language-selector-lite": "^1.6.2"
     },
     "devDependencies": {
+        "@eslint/eslintrc": "^3.3.1",
         "@types/imagesloaded": "^4.1.7",
         "@types/isotope-layout": "^3.0.15",
         "@types/node": "20.14.10",

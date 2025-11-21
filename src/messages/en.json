@@ -31,7 +31,44 @@
     },
     "Projects": {
         "label": "Projects",
-        "title": "My projects"
+        "title": "My projects",
+        "projects": {
+            "devix-digital": {
+                "title": "Devix Digital",
+                "description": "Agency website",
+                "details": "Website of the company I work for. Developed it entirely on my own."
+            },
+            "fortunes-smile": {
+                "title": "Fortune's Smile",
+                "description": "Hotel website",
+                "details": "My first commercial project - during my studies. Developed from scratch. Also implemented an admin panel for managing website content."
+            },
+            "baneservice": {
+                "title": "BaneService",
+                "description": "Landing page for a service company",
+                "details": "Landing page layout based on designer's mockup."
+            },
+            "owltop": {
+                "title": "OWLtop",
+                "description": "Educational project on Next.js",
+                "details": "Website with educational courses, built on Next.js using TypeScript and a database."
+            },
+            "rent-cars": {
+                "title": "Rent Cars",
+                "description": "Car rental website",
+                "details": "Educational project on React with the integration of my own API, so when loading you need to wait for the server to wake up from sleep mode (about 1 min)."
+            },
+            "codeF": {
+                "title": "Code F",
+                "description": "Influencer search website",
+                "details": "Commercial project, currently in development on the Bubble.io platform."
+            },
+            "totaltrend": {
+                "title": "TotalTrend",
+                "description": "E-commerce site on Bubble.io",
+                "details": "Educational e-commerce site built on the Bubble.io platform."
+            }
+        }
     },
     "Skills": {
         "label": "Skills",
@@ -42,7 +79,7 @@
         "title": "About Me",
         "paragraph1": "I'm a front-end developer with a deep interest in modern web technologies, UI animations, and interactive user experiences. I work with React, Next.js, TypeScript, GSAP, Lenis, integrate external services (Cloudflare Stream, Stripe, Calendly), and optimize performance and design down to the pixel.",
         "paragraph2": "I have experience with Bubble.io, creating scalable no-code solutions with logic, dynamic filters, and custom interactions.",
-        "paragraph3": "In my work, I value code cleanliness, logic, aesthetics, and efficiency. I constantly improve — from precise element positioning to building complex JavaScript architectures. I love when an interface doesn't just work, but comes alive.",
+        "paragraph3": "In my work, I value code cleanliness, logic, aesthetics, and efficiency. I deliver on time, adapt seamlessly to team dynamics, and approach challenges with a calm, solution-focused mindset. I constantly improve — from precise element positioning to building complex JavaScript architectures. I love when an interface doesn't just work, but comes alive.",
         "achievements": {
             "title": "Achievements",
             "projects": {

@@ -45,7 +45,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
         setIsExiting(false)
     }, [])
 
-    // Коли pathname змінився → дозволяємо входити
+    // When pathname changes → allow entry
     useEffect(() => {
         if (pathname !== prevPathname.current) {
             prevPathname.current = pathname

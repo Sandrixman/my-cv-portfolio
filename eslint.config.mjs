@@ -1,22 +1,31 @@
-import { defineConfig, globalIgnores } from "eslint/config"
-import nextVitals from "eslint-config-next/core-web-vitals"
-import nextTs from "eslint-config-next/typescript"
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
 
-const eslintConfig = defineConfig([
-    ...nextVitals,
-    ...nextTs,
-    {
-        rules: {
-            "react-hooks/set-state-in-effect": "off",
-        },
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    rules: {
+        // Preserving the original rule, though it might be non-standard.
+        // If this causes an error, we will remove it.
+        "react-hooks/set-state-in-effect": "off",
     },
-    globalIgnores([
-        // Default ignores of eslint-config-next:
-        ".next/**",
-        "out/**",
-        "build/**",
-        "next-env.d.ts",
-    ]),
-])
+  },
+  {
+      ignores: [
+          ".next/**",
+          "out/**",
+          "build/**",
+          "next-env.d.ts",
+      ]
+  }
+];
 
-export default eslintConfig
+export default eslintConfig;

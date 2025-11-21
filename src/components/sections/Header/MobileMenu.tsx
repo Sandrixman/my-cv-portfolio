@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { scrollToSection } from "@/utils/scrollToSection"
 import LangSwitcher from "@/components/LanguageSelect/LanguageSelect"
-import ThemeToggle2 from "@/components/ThemeToggle2/ThemeToggle2"
+import ThemeToggle from "@/components/ThemeToggle/ThemeToggle"
 
 export default function MobileMenu({
     open,
@@ -42,7 +42,7 @@ export default function MobileMenu({
                     >
                         <div className='flex items-center justify-between w-full'>
                             <LangSwitcher />
-                            <ThemeToggle2 />
+                            <ThemeToggle />
                         </div>
 
                         <div className='flex flex-col items-center justify-center gap-8 flex-1'>

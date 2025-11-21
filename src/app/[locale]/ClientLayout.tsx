@@ -11,7 +11,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     const pathname = usePathname()
 
     useEffect(() => {
-        // Нова сторінка замаунтилась → завершуємо перехід
+        // New page mounted → complete transition
         completeTransition()
     }, [pathname, completeTransition])
 

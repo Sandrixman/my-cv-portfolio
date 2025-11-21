@@ -4,20 +4,22 @@ import { skillData } from "./skillData"
 import { useSkills } from "./SkillsContext"
 
 export default function SkillTabs() {
-    const { currentTab, setCurrentTab, setDirection } = useSkills()
+    const { currentTab, setCurrentTab, setDirection, isAnimating, setIsAnimating } = useSkills()
 
     const handleTabClick = (index: number) => {
-        if (index === currentTab) return
+        if (index === currentTab || isAnimating) return
+        setIsAnimating(true) // Block immediately
         setDirection(index > currentTab ? "right" : "left")
         setCurrentTab(index)
     }
 
     return (
-        <div className='inline-flex border-t-4 border-gray-700 pt-6 gap-1 sm:gap-6 flex-wrap justify-center mt-10'>
+        <div className='inline-flex border-t-4 border-gray-700 pt-6 gap-1 sm:gap-6 flex-wrap justify-center mt-5'>
             {skillData.map((tab, i) => (
                 <button
                     key={tab.name}
                     onClick={() => handleTabClick(i)}
+                    disabled={isAnimating}
                     className={`uppercase tracking-widest text-sm px-3 py-2 relative transition ${
                         i === currentTab
                             ? "text-[var(--color-text)] font-bold"

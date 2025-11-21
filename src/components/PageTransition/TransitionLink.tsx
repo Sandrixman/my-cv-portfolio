@@ -28,10 +28,10 @@ export default function TransitionLink({
             e.preventDefault()
 
             // Save scroll position before leaving
-            const y = (window as any).lenis?.scroll ?? window.scrollY
+            const y = window.lenis?.scroll ?? window.scrollY
             sessionStorage.setItem(`scroll:${pathname}`, String(y))
 
-            startTransition(href) // 👉 ONLY this
+            startTransition(href)
             onClick?.(e)
             return
         }

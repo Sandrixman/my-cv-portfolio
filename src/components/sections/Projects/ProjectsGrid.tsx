@@ -1,6 +1,7 @@
 "use client"
 import { LegacyRef } from "react"
 import Image from "next/image"
+import { useTranslations } from "next-intl"
 import { projectsData } from "./projectsData"
 import TransitionLink from "@/components/PageTransition/TransitionLink"
 
@@ -8,6 +9,8 @@ type ProjectsGridProps = {
     gridRef: LegacyRef<HTMLDivElement> | undefined
 }
 const ProjectsGrid = ({ gridRef }: ProjectsGridProps) => {
+    const t = useTranslations()
+
     return (
         <div
             ref={gridRef}
@@ -32,16 +35,16 @@ const ProjectsGrid = ({ gridRef }: ProjectsGridProps) => {
                         <div className='w-full h-[220px] relative'>
                             <Image
                                 src={p.image}
-                                alt={p.title}
+                                alt={t(p.titleKey)}
                                 fill
                                 sizes='(max-width:380px) 100vw, 320px'
                                 className='object-cover'
                             />
                         </div>
                         <div className='p-5'>
-                            <h3 className='text-lg font-semibold mb-1'>{p.title}</h3>
+                            <h3 className='text-lg font-semibold mb-1'>{t(p.titleKey)}</h3>
                             <p className='text-sm text-[var(--color-text-muted)]'>
-                                {p.description}
+                                {t(p.descriptionKey)}
                             </p>
                         </div>
                     </TransitionLink>

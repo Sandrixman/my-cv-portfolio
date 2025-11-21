@@ -3,9 +3,9 @@
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 import { Moon, Sun } from "lucide-react"
-import styles from "./ThemeToggle2.module.css"
+import styles from "./ThemeToggle.module.css"
 
-export default function ThemeToggle2() {
+export default function ThemeToggle() {
     const { resolvedTheme, setTheme } = useTheme()
     const [mounted, setMounted] = useState(false)
     const [isDark, setIsDark] = useState(false)

@@ -7,7 +7,7 @@ import { useSkills } from "./SkillsContext"
 import { Skill } from "./types"
 
 export default function SkillGrid() {
-    const { currentTab, setSelected, direction } = useSkills()
+    const { currentTab, setSelected, direction, setIsAnimating, isAnimating } = useSkills()
     const [width, setWidth] = useState<number | null>(null)
 
     const accentColor = skillData[currentTab].color
@@ -33,14 +33,12 @@ export default function SkillGrid() {
     const itemVariants = {
         initial: (dir: string) => ({
             x: dir === "right" ? width * 0.4 : -width * 0.4,
-            y: 0,
             rotateZ: dir === "right" ? 5 : -5,
             opacity: 0,
             scale: 0.9,
         }),
         enter: {
             x: 0,
-            y: 0,
             rotateZ: 0,
             opacity: 1,
             scale: 1,
@@ -48,7 +46,7 @@ export default function SkillGrid() {
         },
         exit: (dir: string) => ({
             x: dir === "right" ? -width * 2.5 : width * 2.5,
-            y: -150,
+            y: -50,
             rotateZ: dir === "right" ? -10 : 10,
             opacity: 1,
             scale: 0.9,
@@ -57,10 +55,26 @@ export default function SkillGrid() {
         }),
     }
 
+    const parentVariants = {
+        enter: (dir: string) => ({
+            transition: {
+                staggerChildren: 0.07,
+                staggerDirection: dir === "right" ? 1 : -1,
+            },
+        }),
+        exit: (dir: string) => ({
+            transition: {
+                staggerChildren: 0.07,
+                staggerDirection: dir === "right" ? 1 : -1,
+            },
+        }),
+    }
+
     return (
         <div
-            className='relative h-[130px] sm:h-[150px] lg:h-[170px] w-[100vw]
-                    overflow-x-scroll min-[420px]:overflow-x-hidden'
+            className={`relative
+                h-[200px] md:h-[235px] lg:h-[250px] w-[100vw]
+                ${isAnimating ? "overflow-x-hidden" : "overflow-x-auto"} overflow-y-hidden`}
         >
             <AnimatePresence mode='wait' custom={direction}>
                 <motion.ul
@@ -69,23 +83,14 @@ export default function SkillGrid() {
                     initial='initial'
                     animate='enter'
                     exit='exit'
-                    variants={{
-                        enter: (dir: string) => ({
-                            transition: {
-                                staggerChildren: 0.07,
-                                staggerDirection: dir === "right" ? 1 : -1,
-                            },
-                        }),
-                        exit: (dir: string) => ({
-                            transition: {
-                                staggerChildren: 0.07,
-                                staggerDirection: dir === "right" ? 1 : -1,
-                            },
-                        }),
+                    variants={parentVariants}
+                    onAnimationComplete={(definition) => {
+                        if (definition === "enter") setIsAnimating(false)
                     }}
-                    className='flex flex-wrap gap-4 justify-center items-start will-change-transform
-                            w-max min-w-full max-w-[580px] sm:max-w-[700px] 2xl:min-w-[1440px] 2xl:max-w-[1440px]
-                            pt-[25px] lg:pt-[40px] mx-auto'
+                    className='grid grid-rows-2 grid-flow-col gap-4
+                        px-10 mx-auto
+                        w-max
+                        mt-6'
                 >
                     {skillData[currentTab].skills.map((skill: Skill) => (
                         <motion.li
@@ -102,14 +107,14 @@ export default function SkillGrid() {
                             <motion.div
                                 layoutId={`${skill.name}-img`}
                                 whileHover={{
-                                    scale: 1.1,
-                                    y: -4,
-                                    boxShadow: `0 0 20px ${accentColor}55, inset 0 0 12px ${accentColor}33`,
+                                    scale: 1.05,
+                                    y: -3,
+                                    boxShadow: `0 0 15px ${accentColor}55, inset 0 0 12px ${accentColor}33`,
                                     borderColor: accentColor,
                                     transition: { type: "spring", stiffness: 250, damping: 18 },
                                 }}
-                                className='w-[60px] sm:w-[80px] lg:w-[90px]
-                                        h-[60px] sm:h-[80px]
+                                className='w-[60px] md:w-[80px] lg:w-[90px]
+                                        h-[60px] md:h-[80px]
                                         flex items-center justify-center
                                         border border-[#ffffff33] rounded-xl
                                         bg-[var(--color-progressbar)] shadow-sm backdrop-blur-sm transition-all'

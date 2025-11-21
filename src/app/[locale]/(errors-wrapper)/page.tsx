@@ -1,8 +1,8 @@
-import Hero from "@/components/sections/Hero"
+import Hero from "@/components/sections/Hero/Hero"
 import Skills from "@/components/sections/Skills/SkillsSection"
 import Projects from "@/components/sections/Projects/ProjectsSection"
-import About from "@/components/sections/About"
-import Experience from "@/components/sections/Experience"
+import About from "@/components/sections/About/About"
+import Experience from "@/components/sections/Experience/Experience"
 import Contact from "@/components/sections/Contact"
 import Footer from "@/components/sections/Footer"
 

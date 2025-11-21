@@ -7,8 +7,9 @@ import BurgerButton from "./BurgerButton"
 import MobileMenu from "./MobileMenu"
 import Portal from "@/components/Portal"
 import LanguageSelect from "@/components/LanguageSelect/LanguageSelect"
-import ThemeToggle2 from "@/components/ThemeToggle2/ThemeToggle2"
+import ThemeToggle from "@/components/ThemeToggle/ThemeToggle"
 import TransitionLink from "@/components/PageTransition/TransitionLink"
+import dynamic from "next/dynamic"
 
 const missFajardose = Miss_Fajardose({
     subsets: ["latin"],
@@ -74,7 +75,7 @@ export default function Header() {
                 {/* Desktop switchers */}
                 <div className='hidden md:flex items-center gap-6'>
                     <LanguageSelect />
-                    <ThemeToggle2 />
+                    <ThemeToggle />
                 </div>
 
                 {/* Burger */}
